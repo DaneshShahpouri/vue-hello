@@ -14,7 +14,20 @@
 
     <div id="app">
 
-        
+        <div :class="wrapperClassList" :style="backGroundRandom">
+
+            <h1 v-bind:class="h1ClassList">{{h1InnerText}}</h1>
+
+            <img :src="imgSrc" :class="imgClassList">
+    
+            <button :class="btnClassList" @click="changeColor">{{btnInnerText}}</button>
+
+            <p>Scrivi 'red', 'blue' o 'green' se vuoi impostare un colore dominante, altrimenti cambia colore in modo randomico</p>
+            <input type="text" v-model="colorValue">
+            <button @click = "randomColor(colorValue)">Color</button>
+        </div>
+
+
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
